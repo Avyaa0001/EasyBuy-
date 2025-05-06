@@ -4,56 +4,89 @@
   <meta charset="UTF-8">
   <title>LoanSnap - Smart Loan Calculator</title>
 </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LoanSnap 1.0</title>
+  <link rel="stylesheet" href="Loansnap.css" />
+</head>
 <body>
-  <header>
+  <nav>
     <h1>💸 LoanSnap</h1>
-    <p>Your smart EMI calculator for hassle-free loan planning</p>
+    <ul>
+      <li><a href="#calculator">Calculator</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+    </ul>
     <label>
       <input type="checkbox" id="themeToggle">
-      🌗 Dark Mode
+      🌙 Toggle Theme
     </label>
+  </nav>
+
+  <header>
+    <h2>Smart EMI Calculator for Better Financial Planning</h2>
+    <p>Instantly calculate your monthly payments and manage your budget with ease.</p>
   </header>
 
-  <main>
-    <section>
-      <h2>📊 Loan Details</h2>
-      <form>
-        <label for="loanAmount">Loan Amount (₹):</label><br>
-        <input type="number" id="loanAmount" name="loanAmount"><br><br>
+  <section id="calculator">
+    <h3>📊 Loan Calculator</h3>
+    <form>
+      <label for="loanAmount">💰 Loan Amount (₹):</label><br>
+      <input type="number" id="loanAmount" name="loanAmount"><br><br>
 
-        <label for="interestRate">Interest Rate (%):</label><br>
-        <input type="number" id="interestRate" name="interestRate"><br><br>
+      <label for="interestRate">📈 Interest Rate (%):</label><br>
+      <input type="number" id="interestRate" name="interestRate"><br><br>
 
-        <label for="loanTerm">Loan Term (Years):</label><br>
-        <input type="number" id="loanTerm" name="loanTerm"><br><br>
+      <label for="loanTerm">📆 Loan Term (Years):</label><br>
+      <input type="number" id="loanTerm" name="loanTerm"><br><br>
 
-        <p>📈 Estimated EMI: ₹0.00</p>
+      <button type="submit">Calculate EMI</button>
 
-        <button type="submit">Calculate EMI</button>
-      </form>
-    </section>
+      <p>🧾 Your Estimated EMI: ₹0.00</p>
+    </form>
+  </section>
 
-    <section>
-      <h2>💬 Why People Love LoanSnap</h2>
-      <ul>
-        <li>✅ Super fast results</li>
-        <li>✅ Easy to use interface</li>
-        <li>✅ Works on all devices</li>
-      </ul>
-    </section>
+  <section id="features">
+    <h3>🚀 Why Use LoanSnap?</h3>
+    <ul>
+      <li>⚡ Real-time calculations</li>
+      <li>🧠 Smart budgeting tips</li>
+      <li>📱 Mobile-friendly layout</li>
+      <li>🌗 Theme switch support</li>
+    </ul>
+  </section>
 
-    <section>
-      <h2>🧠 Tips</h2>
-      <ul>
-        <li>Consider prepayments to reduce EMI burden</li>
-        <li>Compare interest rates before choosing a lender</li>
-        <li>Plan within your budget to avoid financial stress</li>
-      </ul>
-    </section>
-  </main>
+  <section id="faq">
+    <h3>❓ Frequently Asked Questions</h3>
+    <details>
+      <summary>How accurate is the EMI calculation?</summary>
+      <p>We use standard EMI formulas to provide close approximations. For final figures, consult your lender.</p>
+    </details>
+    <details>
+      <summary>Can I calculate car or education loans?</summary>
+      <p>Yes! Use this tool for home, car, education, or any personal loan estimation.</p>
+    </details>
+    <details>
+      <summary>Do I need to sign up?</summary>
+      <p>No sign-up required. It’s free and instant!</p>
+    </details>
+  </section>
+
+  <section id="testimonials">
+    <h3>💬 What Our Users Say</h3>
+    <blockquote>
+      “LoanSnap helped me plan my home loan payments quickly and easily. Love the clean interface!” – Riya S.
+    </blockquote>
+    <blockquote>
+      “Saves time, simple and powerful. Every student should use it!” – Ankit D.
+    </blockquote>
+  </section>
 
   <footer>
-    <p>🚀 Built with passion by LoanSnap Team</p>
+    <p>📧 Contact us: support@loansnap.in</p>
+    <p>© 2025 LoanSnap. Built with 💙 in India.</p>
   </footer>
 </body>
 </html>
