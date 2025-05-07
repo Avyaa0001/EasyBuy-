@@ -1,109 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
 :root {
-    --bg-color-light: #1e1e2f;
-    --text-color: #ffffff;
-    --neon-pink: #ff4ff6;
-    --neon-blue: #00e5ff;
-    --neon-green: #39ff14;
-    --card-bg: #2c2c3a;
-    --glow: 0 0 10px #00e5ff, 0 0 20px #00e5ff, 0 0 30px #00e5ff;
+  --bg-color-light: #1e1e2f;
+  --text-color: #ffffff;
+  --neon-pink: #ff4ff6;
+  --neon-blue: #00e5ff;
+  --neon-green: #39ff14;
+  --card-bg: #2c2c3a;
+  --glow: 0 0 10px #00e5ff, 0 0 20px #00e5ff, 0 0 30px #00e5ff;
+}
+
+* {
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+}
+
+body {
+  background-color: var(--bg-color-light);
+  color: var(--text-color);
+  font-family: 'Orbitron', sans-serif;
+  margin: 0;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: pulseBackground 8s infinite alternate;
+}
+
+@keyframes pulseBackground {
+  0% {
+    background-color: #1e1e2f;
   }
-  
-  body {
-    background-color: var(--bg-color-light);
-    color: var(--text-color);
-    font-family: 'Orbitron', sans-serif;
-    margin: 0;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    animation: pulseBackground 10s infinite alternate;
+  100% {
+    background-color: #2a2a3f;
   }
-  
-  @keyframes pulseBackground {
-    0% {
-      background-color: #1e1e2f;
-    }
-    100% {
-      background-color: #2a2a3f;
-    }
+}
+
+h1 {
+  font-size: 3rem;
+  color: var(--neon-blue);
+  text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
+  margin-bottom: 2rem;
+  animation: neon-flicker 1.5s infinite alternate;
+}
+
+@keyframes neon-flicker {
+  0% {
+    text-shadow: 0 0 5px var(--neon-blue);
   }
-  
-  h1 {
-    font-size: 3rem;
-    color: var(--neon-blue);
-    text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
-    margin-bottom: 2rem;
+  100% {
+    text-shadow: 0 0 20px var(--neon-blue), 0 0 40px var(--neon-pink);
   }
-  
-  nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 2rem;
-    display: flex;
-    gap: 1rem;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
+  color: var(--neon-pink);
+  text-decoration: none;
+  font-weight: bold;
+  border: 2px solid var(--neon-pink);
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  text-shadow: 0 0 5px var(--neon-pink);
+  transition: all 0.4s ease;
+}
+
+nav a:hover {
+  background-color: var(--neon-pink);
+  color: #000;
+  box-shadow: 0 0 20px var(--neon-pink), 0 0 40px var(--neon-blue);
+}
+
+.container {
+  background-color: var(--card-bg);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 0 15px #39ff14;
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  transform: scale(0.95);
+  animation: popIn 0.8s ease forwards;
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
   }
-  
-  nav a {
-    color: var(--neon-pink);
-    text-decoration: none;
-    font-weight: bold;
-    border: 2px solid var(--neon-pink);
-    padding: 0.5rem 1rem;
-    border-radius: 10px;
-    text-shadow: 0 0 5px var(--neon-pink);
-    transition: all 0.3s ease;
+  to {
+    transform: scale(1);
+    opacity: 1;
   }
-  
-  nav a:hover {
-    background-color: var(--neon-pink);
-    color: #000;
-    box-shadow: 0 0 15px var(--neon-pink);
-  }
-  
-  .container {
-    background-color: var(--card-bg);
-    border-radius: 20px;
-    padding: 2rem;
-    box-shadow: 0 0 15px #39ff14;
-    width: 100%;
-    max-width: 500px;
-    text-align: center;
-  }
-  
-  input[type="number"] {
-    padding: 0.8rem;
-    width: 80%;
-    border: none;
-    border-radius: 10px;
-    background-color: #333;
-    color: #fff;
-    margin: 0.5rem 0;
-    box-shadow: var(--glow);
-  }
-  
-  button {
-    padding: 1rem 2rem;
-    margin-top: 1rem;
-    background: linear-gradient(45deg, var(--neon-blue), var(--neon-green));
-    border: none;
-    color: #000;
-    font-weight: bold;
-    font-size: 1.1rem;
-    border-radius: 12px;
-    box-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green);
-    cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  
-  button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px var(--neon-green), 0 0 30px var(--neon-blue);
-  }
-  
-  .result {
-    margin-top: 2rem;
-    font-size: 1.5rem;
-    color: var(--neon-green);
-    text-shadow: 0 0 5px var(--neon-green);
-  }
+}
+
+input[type="number"] {
+  padding: 0.8rem;
+  width: 80%;
+  border: none;
+  border-radius: 10px;
+  background-color: #333;
+  color: #fff;
+  margin: 0.5rem 0;
+  box-shadow: var(--glow);
+  transition: box-shadow 0.3s ease;
+}
+
+input[type="number"]:focus {
+  outline: none;
+  box-shadow: 0 0 15px var(--neon-green), 0 0 25px var(--neon-blue);
+}
+
+button {
+  padding: 1rem 2rem;
+  margin-top: 1rem;
+  background: linear-gradient(45deg, var(--neon-blue), var(--neon-green));
+  border: none;
+  color: #000;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05) rotate(-1deg);
+  box-shadow: 0 0 25px var(--neon-green), 0 0 40px var(--neon-blue);
+}
+
+.result {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  color: var(--neon-green);
+  text-shadow: 0 0 10px var(--neon-green);
+  transition: transform 0.4s ease;
+}
+
+.result:hover {
+  transform: scale(1.1);
+}
