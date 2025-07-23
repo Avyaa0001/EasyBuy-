@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Loan Eligibility Checker</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .calculator-section {
+      max-width: 600px;
+      margin: auto;
+      width: 90%;
+      padding: 20px;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 1rem;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      font-size: 1rem;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .result-box {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #e3f2fd;
+      border-radius: 8px;
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      input[type="number"],
+      button {
+        font-size: 0.95rem;
+        padding: 10px;
+      }
+
+      .result-box {
+        font-size: 0.95rem;
+        padding: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>LoanSnap</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="calculator.html">Calculator</a>
+      <a href="checker.html">Eligibility</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="calculator-section">
+      <h2>Loan Eligibility Checker 🕵️‍♂️</h2>
+      <label for="income">Monthly Income (₹):</label>
+      <input type="number" id="income" placeholder="e.g., 50000" />
+
+      <label for="expenses">Monthly Expenses (₹):</label>
+      <input type="number" id="expenses" placeholder="e.g., 20000" />
+
+      <label for="tenure">Loan Tenure (in years):</label>
+      <input type="number" id="tenure" placeholder="e.g., 5" />
+
+      <button onclick="checkEligibility()">Check Eligibility</button>
+
+      <div id="react-result"></div>
+    </section>
+  </main>
+
+  <footer>
+    Contact us: 
+    <a href="tel:+919999999999">📞 +91-9999999999</a> |
+    <a href="mailto:loansnap@example.com">📧 loansnap@example.com</a>
+  </footer>
+
+  <!-- React CDN -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- JS Logic -->
+  <script type="text/javascript">
+    function checkEligibility() {
+      const income = parseFloat(document.getElementById("income").value);
+      const expenses = parseFloat(document.getElementById("expenses").value);
+      const tenure = parseFloat(document.getElementById("tenure").value);
+
+      if (isNaN(income) || isNaN(expenses) || isNaN(tenure) || income <= 0 || expenses < 0 || tenure <= 0) {
+        alert("Please enter valid values.");
+        return;
+      }
+
+      const savings = income - expenses;
+      const maxEMI = savings * 0.5;
+      const maxLoan = maxEMI * tenure * 12;
+
+      renderReactResult(maxLoan.toFixed(0));
+    }
+  </script>
+
+  
+  <script type="text/babel">
+    function ResultCard({ amount }) {
+      return (
+        <div className="result-box">
+          <h3>Loan Eligibility</h3>
+          <p>You can afford a loan up to:</p>
+          <p style={{ fontSize: "1.4em", fontWeight: "bold" }}>₹{amount}</p>
+        </div>
+      );
+    }
+
+    function renderReactResult(amount) {
+      ReactDOM.createRoot(document.getElementById("react-result")).render(
+        <ResultCard amount={amount} />
+      );
+    }
+  </script>
+</body>
+</html>

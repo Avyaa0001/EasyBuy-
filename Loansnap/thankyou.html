@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thank You</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #e3ffe7, #d9e7ff);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: #1e3c72;
+      color: white;
+      padding: 15px 0;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.4em;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+      color: #ffdd57;
+    }
+
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+      padding: 20px;
+    }
+
+    .thank-you {
+      background-color: #ffffffea;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      max-width: 480px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .thank-you h2 {
+      color: #27ae60;
+      font-size: 2.2em;
+      margin-bottom: 15px;
+    }
+
+    .thank-you p {
+      font-size: 1.1em;
+      margin: 10px 0;
+      color: #34495e;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #1e3c72;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #16345a;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.6em;
+      }
+
+      nav {
+        margin-top: 8px;
+      }
+
+      nav a {
+        display: block;
+        margin: 6px 0;
+        font-size: 1em;
+      }
+
+      main {
+        padding: 10px;
+        height: auto;
+      }
+
+      .thank-you {
+        padding: 25px 15px;
+      }
+
+      .thank-you h2 {
+        font-size: 1.6em;
+      }
+
+      .thank-you p {
+        font-size: 1em;
+      }
+
+      .button {
+        font-size: 0.95em;
+        padding: 8px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>LoanSnap</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="calculator.html">Calculator</a>
+      <a href="checker.html">Eligibility</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="feedback.html">Raise Concern</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="thank-you">
+      <h2>Thank You!</h2>
+      <p>Your calculation was successful.</p>
+      <p>We appreciate you using LoanSnap.</p>
+      <a href="index.html" class="button">Back to Home</a>
+    </section>
+  </main>
+</body>
+<footer style="text-align:center; padding: 10px; background-color: #f0f0f0;">
+  Contact Us
+</footer>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #74ebd5, #ACB6E5);
+      color: #2c3e50;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 40px 20px;
+      max-width: 900px;
+      width: 90%;
+      margin: auto;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .about-section {
+      background-color: #ffffffdd;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .about-section h2 {
+      color: #2c3e50;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+    }
+
+    .about-section p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 15px;
+      color: #34495e;
+    }
+
+    .about-section ul {
+      margin-top: 10px;
+      margin-left: 20px;
+      list-style-type: disc;
+      color: #34495e;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 20px;
+      background-color: #2c3e50;
+      color: white;
+      font-size: 1em;
+    }
+
+    footer a {
+      color: #2ecc71;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+      nav a {
+        display: block;
+        margin: 6px 0;
+        font-size: 1rem;
+      }
+      main {
+        padding: 20px 10px;
+      }
+      .about-section {
+        padding: 15px;
+      }
+      .about-section h2 {
+        font-size: 1.3rem;
+      }
+      .about-section p,
+      .about-section ul {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>About LoanSnap</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="calculator.html">Calculator</a>
+      <a href="contact.html">Contact</a>
+
+        <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="about-section">
+      <h2>Our Mission</h2>
+      <p>
+        At LoanSnap, we strive to simplify financial decisions. We believe everyone deserves clear, fast, and accessible tools to understand their loans and plan for the future.
+      </p>
+      <h2>What We Offer</h2>
+      <ul>
+        <li>Simple Loan Calculations</li>
+        <li>User-Friendly Interface</li>
+        <li>Real-Time EMI Insights</li>
+        <li>100% Privacy Guarantee</li>
+      </ul>
+      <h2>Why Choose Us?</h2>
+      <p>
+        Whether you're planning a car loan or a home mortgage, LoanSnap provides a sleek and stress-free way to calculate what you owe. We’re here to support your journey toward financial clarity.
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 LoanSnap. All rights reserved.
+    <br />
+    <a href="mailto:loansnap@example.com">loansnap@example.com</a> |
+    <a href="tel:+911234567890">+91-1234567890</a>
+  </footer>
+</body>
+</html>

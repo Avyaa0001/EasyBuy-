@@ -1,15 +1,34 @@
-document.getElementById("loanForm").addEventListener("submit", function (e) {
-    e.preventDefault();
+function calculateLoan() {
+    const amount = parseFloat(document.getElementById("amount").value);
+    const rate = parseFloat(document.getElementById("rate").value);
+    const term = parseFloat(document.getElementById("term").value);
   
-    const P = parseFloat(document.getElementById("loanAmount").value);
-    const annualRate = parseFloat(document.getElementById("interestRate").value);
-    const years = parseFloat(document.getElementById("loanTerm").value);
+    if (isNaN(amount) || isNaN(rate) || isNaN(term)) {
+      alert("Please fill out all fields with valid numbers.");
+      return;
+    }
   
-    const r = annualRate / 12 / 100; 
-    const n = years * 12;
+    const interest = (amount * rate * term) / 100;
+    const total = amount + interest;
+    const monthly = total / (term * 12);
   
-    const emi = (P * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
-    const result = isFinite(emi) ? `₹${emi.toFixed(2)}` : "Invalid Input";
+    document.getElementById("loanAmountDiv").innerHTML = `
+      <h3>Loan Amount</h3>
+      <p>₹${amount.toFixed(2)}</p>
+    `;
   
-    document.getElementById("result").innerText = `🧾 Your Estimated EMI: ${result}`;
-  });
+    document.getElementById("totalInterestDiv").innerHTML = `
+      <h3>Total Interest</h3>
+      <p>₹${interest.toFixed(2)}</p>
+    `;
+  
+    document.getElementById("monthlyEMIDiv").innerHTML = `
+      <h3>Monthly EMI</h3>
+      <p>₹${monthly.toFixed(2)}</p>
+    `;
+  
+   
+    setTimeout(() => {
+      window.location.href = "thankyou.html";
+    }, 2000); 
+  }

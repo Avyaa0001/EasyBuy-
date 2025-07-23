@@ -2,94 +2,131 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LoanSnap - Smart Loan Calculator</title>
-  <link rel="stylesheet" href="Loansnap.css" />
+  <title>LoanSnap - Home</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    nav {
+      background-color: #50626d;
+      padding: 10px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px;
+    }
+
+    main.centered {
+      text-align: center;
+      padding: 50px 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #555;
+    }
+
+    .go-button {
+      padding: 12px 24px;
+      font-size: 1rem;
+      margin-top: 20px;
+      background-color: #2ecc71;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav a {
+        margin: 8px 0;
+      }
+
+      .go-button {
+        font-size: 0.95rem;
+        padding: 10px 20px;
+      }
+    }
+  </style>
 </head>
 <body>
   <nav>
-    <h1>💸 LoanSnap</h1>
-    <ul>
-      <li><a href="#calculator">Calculator</a></li>
-      <li><a href="#features">Features</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="#testimonials">Reviews</a></li>
-    </ul>
-    <label>
-      <input type="checkbox" id="themeToggle">
-      🌙 Toggle Theme
-    </label>
-  </nav>
-  <div style="text-align: center; margin: 20px 0;">
-    <img src="images/loansnap.jpg" 
-     
-     style="max-width: 90%; height: auto; display: block; margin: 20px auto; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);" />
+    <a href="index.html">Home</a>
+    <a href="calculator.html">Calculator</a>
+    <a href="checker.html">Eligibility</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
     
-  </div>
+  </nav>
 
-  <header>
-    <h2>Smart EMI Calculator for Better Financial Planning</h2>
-    <p>Instantly calculate your monthly payments and manage your budget with ease.</p>
-  </header>
+  <main class="centered">
+    <h1>Welcome to LoanSnap</h1>
+    <p>Your smart loan calculator and planning partner.</p>
+    <div id="react-button"></div> 
+  </main>
 
-  <section id="calculator">
-    <h3>📊 Loan Calculator</h3>
-    <form id="loanForm">
-      <label for="loanAmount">💰 Loan Amount (₹):</label><br>
-      <input type="number" id="loanAmount" name="loanAmount" required><br><br>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-      <label for="interestRate">📈 Interest Rate (%):</label><br>
-      <input type="number" id="interestRate" name="interestRate" required><br><br>
+  <script type="text/babel">
+    const GoToCalculator = () => {
+      const handleClick = () => {
+        window.location.href = "calculator.html";
+      };
 
-      <label for="loanTerm">📆 Loan Term (Years):</label><br>
-      <input type="number" id="loanTerm" name="loanTerm" required><br><br>
+      return (
+        <button onClick={handleClick} className="go-button">
+          Go to Calculator
+        </button>
+      );
+    };
 
-      <button type="submit">Calculate EMI</button>
-      <div class="result" id="result">🧾 Your Estimated EMI: ₹0.00</div>
-    </form>
-  </section>
+    ReactDOM.createRoot(document.getElementById("react-button")).render(<GoToCalculator />);
+  </script>
 
-  <section id="features">
-    <h3>🚀 Why Use LoanSnap?</h3>
-    <ul>
-      <li>⚡ Real-time calculations</li>
-      <li>🧠 Smart budgeting tips</li>
-      <li>📱 Mobile-friendly layout</li>
-      <li>🌗 Theme switch support</li>
-    </ul>
-  </section>
-
-  <section id="faq">
-    <h3>❓ Frequently Asked Questions</h3>
-    <details>
-      <summary>How accurate is the EMI calculation?</summary>
-      <p>We use standard EMI formulas to provide close approximations. For final figures, consult your lender.</p>
-    </details>
-    <details>
-      <summary>Can I calculate car or education loans?</summary>
-      <p>Yes! Use this tool for home, car, education, or any personal loan estimation.</p>
-    </details>
-    <details>
-      <summary>Do I need to sign up?</summary>
-      <p>No sign-up required. It’s free and instant!</p>
-    </details>
-  </section>
-
-  <section id="testimonials">
-    <h3>💬 What Our Users Say</h3>
-    <blockquote>
-      “LoanSnap helped me plan my home loan payments quickly and easily. Love the clean interface!” – Riya S.
-    </blockquote>
-    <blockquote>
-      “Saves time, simple and powerful. Every student should use it!” – Ankit D.
-    </blockquote>
-  </section>
-
-  <footer>
-    <p>📧 Contact us: support@loansnap.in</p>
-    <p>© 2025 LoanSnap. Built with 💙 in India.</p>
-  </footer>
-
-  <script src="script.js"></script>
+  <script>
+    if (localStorage.getItem("loggedIn") !== "true") {
+      window.location.href = "login.html";
+    }
+  </script>
 </body>
+<footer style="text-align:center; padding: 10px; background-color: #f0f0f0;">
+  Contact Us
+</footer>
 </html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LoanSnap Login</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    .login-container {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+      padding: 40px 30px;
+      width: 90%;
+      max-width: 400px;
+      color: white;
+      text-align: center;
+      animation: fadeIn 1s ease-in;
+    }
+
+    .login-container h2 {
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px 15px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px 15px;
+      margin-top: 15px;
+      background-color: #00c6ff;
+      border: none;
+      color: white;
+      font-size: 1.1rem;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #0072ff;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 500px) {
+      .login-container {
+        padding: 25px 15px;
+      }
+
+      .login-container h2 {
+        font-size: 1.5rem;
+      }
+
+      input, button {
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .login-container {
+        padding: 35px 25px;
+        font-size: 0.95rem;
+      }
+
+      .login-container h2 {
+        font-size: 1.8rem;
+      }
+
+      input, button {
+        font-size: 1rem;
+        padding: 10px 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Welcome to LoanSnap</h2>
+    <input type="text" placeholder="Username" id="username" />
+    <input type="password" placeholder="Password" id="password1122" />
+    <button onclick="login()">Login</button>
+  </div>
+
+  <script>
+   function login() {
+  const user = document.getElementById("username").value;
+  const pass = document.getElementById("password1122").value;
+  if (user && pass) {
+    window.location.href = "index.html"; 
+  } else {
+    alert("Please enter both username and password.");
+  }
+}
+  </script>
+</body>
+</html>
